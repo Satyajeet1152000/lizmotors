@@ -8,6 +8,9 @@ import TaskSection from "./TaskSection";
 
 const AdminPanel = () => {
     const [activeTask, setActiveTask] = useState(Tasks[0]);
+    const handleOnDeleteTask = (id: string) => {
+        console.log("Delte task - ", id);
+    };
     return (
         <main className="flex h-full border-2">
             <div className=" border-2 space-y-3 p-3 bg-[#0e131f] ">
@@ -43,7 +46,7 @@ const AdminPanel = () => {
                 </div>
             </div>
 
-            <TaskSection data={activeTask} />
+            <TaskSection data={activeTask} onDelete={handleOnDeleteTask} />
         </main>
     );
 };

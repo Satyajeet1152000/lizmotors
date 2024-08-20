@@ -13,24 +13,25 @@ export const Tasks: TaskType[] = [
         title: "Training Program",
         modules: [
             {
-                title: "Puipment (PPE)",
+                title: "Personal Protective Equipment (PPE)",
                 description:
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, adipisci facere? Aspernatur dolorem sint excepturi soluta doloribus magni fugit error voluptas? Repellat perferendis enim veniam odio nostrum in totam illo.",
                 videoSrc: "",
             },
             {
-                title: "Fire Safeevention",
+                title: "Fire Safety and Preventionn",
                 description:
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, adipisci facere? Aspernatur dolorem sint excepturi soluta doloribus magni fugit error voluptas? Repellat perferendis enim veniam odio nostrum in totam illo.",
                 videoSrc: "",
             },
             {
-                title: "Slip, Trip,on",
+                title: "Slip, Trip, and Fall Prevention",
                 description:
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, adipisci facere? Aspernatur dolorem sint excepturi soluta doloribus magni fugit error voluptas? Repellat perferendis enim veniam odio nostrum in totam illo.",
                 videoSrc: "",
             },
         ],
+        assignedTo: ["7", "3", "15", "10", "19"],
     },
     {
         id: "345vchbc",
@@ -55,6 +56,7 @@ export const Tasks: TaskType[] = [
                 videoSrc: "",
             },
         ],
+        assignedTo: ["12", "8", "5", "1", "17"],
     },
     {
         id: "34534cxvbgd",
@@ -79,6 +81,7 @@ export const Tasks: TaskType[] = [
                 videoSrc: "",
             },
         ],
+        assignedTo: ["2", "11", "14", "18", "9"],
     },
     {
         id: "3453xcfbvdsf",
@@ -103,5 +106,29 @@ export const Tasks: TaskType[] = [
                 videoSrc: "",
             },
         ],
+        assignedTo: ["4", "6", "13", "16", "20"],
     },
+];
+
+export const Users: Pick<UserType, "id" | "name">[] = [
+    { id: "1", name: "Alice Johnson" },
+    { id: "2", name: "Bob Smith" },
+    { id: "3", name: "Charlie Brown" },
+    { id: "4", name: "David Wilson" },
+    { id: "5", name: "Emma Davis" },
+    { id: "6", name: "Frank Miller" },
+    { id: "7", name: "Grace Lee" },
+    { id: "8", name: "Henry Martinez" },
+    { id: "9", name: "Ivy Thomas" },
+    { id: "10", name: "Jack White" },
+    { id: "11", name: "Kara Young" },
+    { id: "12", name: "Leo Walker" },
+    { id: "13", name: "Mia Allen" },
+    { id: "14", name: "Noah King" },
+    { id: "15", name: "Olivia Scott" },
+    { id: "16", name: "Paul Harris" },
+    { id: "17", name: "Quinn Moore" },
+    { id: "18", name: "Rachel Adams" },
+    { id: "19", name: "Sam Baker" },
+    { id: "20", name: "Tina Robinson" },
 ];

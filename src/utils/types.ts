@@ -8,6 +8,7 @@ export interface TaskType {
     id: string;
     title: string;
     modules: Module[];
+    assignedTo: string[];
 }
 
 export interface UserType {
