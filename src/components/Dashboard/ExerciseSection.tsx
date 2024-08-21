@@ -1,33 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { TaskType } from "../../utils/types";
-import { LoggedInUser } from "../../utils/dummyData";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { FaArrowCircleRight } from "react-icons/fa";
 
 interface Props {
     Taskdata: TaskType;
-    userData: typeof LoggedInUser;
+    taskProgress: number;
 }
 
-const ExerciseSection = ({ Taskdata, userData }: Props) => {
-    // console.log(Taskdata);
+const ExerciseSection = ({ Taskdata, taskProgress }: Props) => {
+    const ratio = 100 / Taskdata.modules.length;
     const [activeModule, setActiveModule] = useState(0);
-    const progress = userData.assignedTasks.filter(
-        (t) => t.taskId === Taskdata.id
-    )[0].progress;
-
-    const progressCalculator = () => {
-        const moduleLength = Taskdata.modules.length;
-    };
+    const [progress, setProgress] = useState(0);
 
     useEffect(() => {
         if (Taskdata.modules.length > 0) {
-            const moduleLength = Taskdata.modules.length;
-            const currentProgressValue = (moduleLength * progress) / 100;
-            console.log(moduleLength, progress, currentProgressValue);
-
-            setActiveModule(Math.floor(currentProgressValue));
+            setActiveModule(taskProgress);
+            setProgress((taskProgress + 1) * ratio);
         }
     }, [Taskdata]);
     return (
@@ -42,8 +32,8 @@ const ExerciseSection = ({ Taskdata, userData }: Props) => {
                 </h1>
                 <div className="p-5">
                     <CircularProgressbar
-                        value={progress}
-                        text={`${progress}%`}
+                        value={Math.floor(progress)}
+                        text={`${Math.floor(progress)}%`}
                         className=" w-fit h-36"
                         strokeWidth={15}
                     />
@@ -78,7 +68,14 @@ const ExerciseSection = ({ Taskdata, userData }: Props) => {
                     {Taskdata.modules[activeModule + 1].title}
                     <button
                         className="text-5xl"
-                        onClick={() => setActiveModule(activeModule + 1)}
+                        onClick={() => {
+                            setActiveModule(activeModule + 1);
+                            console.log(activeModule);
+                            setProgress(
+                                progress + 100 / Taskdata.modules.length
+                            );
+                            // Update DB
+                        }}
                     >
                         <FaArrowCircleRight />
                     </button>

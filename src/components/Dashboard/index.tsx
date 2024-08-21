@@ -10,6 +10,7 @@ const Dashboard = () => {
     const AssignedTaskData = Tasks.filter((t) => x.includes(t.id));
 
     const [activeTaskBtn, setActiveTaskBtn] = useState(AssignedTaskData[0]);
+
     return (
         <main className="flex h-full border-2">
             <div className=" border-2 space-y-3 p-3 bg-[#0e131f] ">
@@ -34,7 +35,14 @@ const Dashboard = () => {
                 </div>
             </div>
 
-            <ExerciseSection Taskdata={activeTaskBtn} userData={LoggedInUser} />
+            <ExerciseSection
+                Taskdata={activeTaskBtn}
+                taskProgress={
+                    LoggedInUser.assignedTasks.filter(
+                        (t) => t.taskId === activeTaskBtn.id
+                    )[0].progress
+                }
+            />
         </main>
     );
 };

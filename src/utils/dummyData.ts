@@ -144,7 +144,7 @@ export const LoggedInUser: UserType & {
     email: "bob123@gmail.com",
     token: "34lui534qwver0v3q4u04vn30q22b8vityhugskbgyewap8o93wq489lhuvaweluira789",
     assignedTasks: [
-        { taskId: "324sdgf", progress: 90 },
-        { taskId: "345vchbc", progress: 50 },
+        { taskId: "324sdgf", progress: 1 },
+        { taskId: "345vchbc", progress: 0 },
     ],
 };
