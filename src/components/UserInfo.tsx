@@ -1,5 +1,5 @@
 import { FaUserCircle } from "react-icons/fa";
-import { UserType } from "../../utils/types";
+import { UserType } from "../utils/types";
 
 const UserInfo = ({ data }: { data: UserType }) => {
     return (
